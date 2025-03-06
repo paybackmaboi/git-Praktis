@@ -30,7 +30,7 @@ export class Student {
     @Column()
     course!: string;
 
-    @Column({ type: 'int' }) 
+    @Column()
     yearLevel!: number;
     
     @OneToMany(() => Violation, (violation) => violation.student, { cascade: ['insert', 'update'], onDelete: 'CASCADE' })
