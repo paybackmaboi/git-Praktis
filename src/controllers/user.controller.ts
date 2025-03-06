@@ -17,7 +17,7 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try { 
         await userService.create(req.body);
-        res.json({ message: "student created" }); 
+        res.json({ message: "student created successfully" }); 
     }
     catch (err) { next(err); }
 });
