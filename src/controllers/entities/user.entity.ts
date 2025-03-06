@@ -22,14 +22,20 @@ export class Student {
     lastName!: string;
 
     @Column()
+    gender!: string;
+
+    @Column()
+    age!: number;
+
+    @Column()
     course!: string;
 
-    @Column({ type: 'int' }) // Ensure proper SQL type
+    @Column({ type: 'int' }) 
     yearLevel!: number;
     
     @OneToMany(() => Violation, (violation) => violation.student, { cascade: ['insert', 'update'], onDelete: 'CASCADE' })
     violations!: Violation[];
 
     @Column()
-    role!: string;  // Example: "admin", "teacher", "staff"
+    role!: string;  
 }
